@@ -30,9 +30,12 @@ pipeline {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-linux:python2'
+                    args '--entrypoint=""'  // Desactivamos el ENTRYPOINT predeterminado
                 }
             }
             steps {
+                // Verificamos si pyinstaller está disponible
+                sh 'which pyinstaller || echo "PyInstaller no encontrado"'
                 sh 'pyinstaller --onefile sources/add2vals.py'
             }
             post {

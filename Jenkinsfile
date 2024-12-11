@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deliver') {
             agent {
-               docker { image 'pyinstaller/pyinstaller' }
+               docker { image 'cdrx/pyinstaller-linux:python2' }
             }
             steps {
                 // Verificamos si pyinstaller está disponible

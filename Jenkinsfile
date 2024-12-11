@@ -28,10 +28,7 @@ pipeline {
         }
         stage('Deliver') {
             agent {
-                docker {
-                    image 'cdrx/pyinstaller-linux:python2'
-                    args '--entrypoint=""'  // Desactivamos el ENTRYPOINT predeterminado
-                }
+               docker { image 'pyinstaller/pyinstaller' }
             }
             steps {
                 // Verificamos si pyinstaller está disponible

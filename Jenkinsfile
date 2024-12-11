@@ -33,8 +33,15 @@ pipeline {
                 }
             }
             steps {
-                sh 'python -m pip install pyinstaller'
-                sh 'pyinstaller --onefile sources/add2vals.py'
+                sh '''
+            # Instalar pip en el contenedor
+            curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+            python get-pip.py
+            # Instalar pyinstaller
+            pip install pyinstaller
+            # Ejecutar pyinstaller
+            pyinstaller --onefile sources/add2vals.py
+        '''
             }
             post {
                 success {

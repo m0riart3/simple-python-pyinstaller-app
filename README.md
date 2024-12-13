@@ -30,7 +30,7 @@ Lo siguiente será configurar jenkins, añadimos el usuario en el registro que s
 
 Dado que esto se muestra en las diapositivas, no voy a poner capturas ni dedicarle más tiempo a ello.
 
-### Ejecución del Jenkinsfile
+## Ejecución del Jenkinsfile
 
 Por último nos mostrará la opcion de ```new item```. 
 
